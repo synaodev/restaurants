@@ -1,0 +1,14 @@
+<h2>Write a review for </h2>
+<div *ngIf="flash">
+	<h3>Errors!</h3>
+	<h4 *ngFor="let message of messages">{{ message }}</h4>
+	<hr>
+</div>
+<button [routerLink]="['/restaurants']">Back</button>
+<form (submit)="onSubmit()">
+	<p> {{ review | json }} </p>
+	<input type="text" [(ngModel)]="review.customer" [ngModelOptions]="{standalone: true}">
+	<input type="number" [(ngModel)]="review.stars" [ngModelOptions]="{standalone: true}">
+	<textarea cols="30" rows="10" [(ngModel)]="review.description" [ngModelOptions]="{standalone: true}"></textarea>
+	<input type="submit" value="Create Review!">
+</form>

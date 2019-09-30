@@ -1,0 +1,22 @@
+<h2>Show: </h2>
+<button [routerLink]="['/restaurants', 'create']">Create</button>
+<table>
+	<thead>
+		<tr>
+			<th>Restaurant</th>
+			<th>Cuisine</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let restaurant of restaurants">
+			<td>{{ restaurant.name }}</td>
+			<td>{{ restaurant.cuisine }}</td>
+			<td>
+				<button [routerLink]="['/restaurants', restaurant._id]">Read Reviews</button>
+				<button [routerLink]="['/restaurants', restaurant._id, 'edit']">Update</button>
+				<button (click)="onDelete(restaurant)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>

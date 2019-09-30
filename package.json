@@ -1,0 +1,17 @@
+{
+  "name": "restaurants",
+  "version": "1.0.0",
+  "description": "Restaurant Crud Application in MEAN",
+  "main": "server.js",
+  "scripts": {
+    "debug": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Tyler Cadena",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3",
+    "nodemon": "^1.19.3"
+  }
+}

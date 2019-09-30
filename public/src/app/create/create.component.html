@@ -1,0 +1,13 @@
+<h2>Write a review for </h2>
+<div *ngIf="flash">
+	<h3>Errors!</h3>
+	<h4 *ngFor="let message of messages">{{ message }}</h4>
+	<hr>
+</div>
+<button [routerLink]="['/restaurants']">Back</button>
+<form (submit)="onSubmit()">
+	<p> {{ review | json }} </p>
+	<input type="text" [(ngModel)]="restaurant.name" [ngModelOptions]="{standalone: true}">
+	<input type="text" [(ngModel)]="restaurant.cuisine" [ngModelOptions]="{standalone: true}">
+	<input type="submit" value="Create Restaurant!">
+</form>

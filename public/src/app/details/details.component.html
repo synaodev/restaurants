@@ -1,0 +1,21 @@
+<div *ngIf="restaurant">
+	<h2>Reviews for {{ restaurant.name }}</h2>
+	<button [routerLink]="['/restaurants', restaurant._id, 'review']">New Review</button>
+</div>
+<button [routerLink]="['/restaurants']">Back</button>
+<table>
+	<thead>
+		<tr>
+			<th>Customer</th>
+			<th>Stars</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let review of restaurant['reviews']">
+			<td>{{ review.customer }}</td>
+			<td>{{ review.stars }}</td>
+			<td>{{ review.description }}</td>
+		</tr>
+	</tbody>
+</table>
